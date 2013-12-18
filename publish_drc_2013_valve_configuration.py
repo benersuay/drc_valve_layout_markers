@@ -7,8 +7,10 @@ from visualization_msgs.msg import MarkerArray
 distFromRobotTorso = 0.5
 clearanceFromPipe = 0.05
 pipeDiam = 0.1
-handleHeight = 37.7*0.0254
+zOffset = 0.05
+handleHeight = (37.7*0.0254) + zOffset
 yOffset = -0.09
+
 
 def pipe_factory(marker, markerid, yLoc):
     marker.header.frame_id = "leftFoot"
