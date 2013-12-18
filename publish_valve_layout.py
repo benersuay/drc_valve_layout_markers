@@ -1,3 +1,8 @@
+# Bener Suay
+# November, 2013
+# benersuay@wpi.edu
+# wpi.edu/~benersuay
+
 #!/usr/bin/env python
 import rospy
 from std_msgs.msg import String
