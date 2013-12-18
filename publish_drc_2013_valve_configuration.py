@@ -8,7 +8,7 @@ distFromRobotTorso = 0.5
 clearanceFromPipe = 0.05
 pipeDiam = 0.1
 handleHeight = 37.7*0.0254
-
+yOffset = -0.09
 
 def pipe_factory(marker, markerid, yLoc):
     marker.header.frame_id = "leftFoot"
@@ -82,13 +82,13 @@ def marker_publisher():
     
 
     handles = MarkerArray()
-    leftHandle = handle_factory(Marker(), 3, 0.3302, -0.7066, "lever")
+    leftHandle = handle_factory(Marker(), 3, 0.3302, -0.7066+yOffset, "lever")
     handles.markers.append(leftHandle)
 
-    midHandle = handle_factory(Marker(), 4, 0.4572, 0.0, "round")
+    midHandle = handle_factory(Marker(), 4, 0.4572, yOffset, "round")
     handles.markers.append(midHandle)
 
-    rightHandle = handle_factory(Marker(), 5, 0.2286, 0.9652, "round")
+    rightHandle = handle_factory(Marker(), 5, 0.2286, 0.9652+yOffset, "round")
     handles.markers.append(rightHandle)
     
     while not rospy.is_shutdown():
